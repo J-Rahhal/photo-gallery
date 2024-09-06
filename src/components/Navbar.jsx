@@ -2,6 +2,7 @@ import React from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
 import MobileNav from "./MobileNav";
+import { motion } from "framer-motion";
 
 const Navbar = ({ toggleMenu, toggle }) => {
   return (
@@ -25,7 +26,7 @@ const Navbar = ({ toggleMenu, toggle }) => {
           <div className="relative w-full">
             <MobileNav />
             <IoMdClose
-              className="text-white absolute top-5 right-5"
+              className="text-white absolute top-5 right-5 cursor-pointer"
               onClick={toggleMenu}
               size={25}
             />
@@ -33,7 +34,11 @@ const Navbar = ({ toggleMenu, toggle }) => {
         ) : (
           <div className="flex justify-between items-center m-5">
             <p>AEONS</p>
-            <CiMenuBurger onClick={toggleMenu} size={20} />{" "}
+            <CiMenuBurger
+              onClick={toggleMenu}
+              size={20}
+              className="cursor-pointer"
+            />{" "}
           </div>
         )}
       </div>
